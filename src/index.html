@@ -7,10 +7,32 @@
     <link href="./output.css" rel="stylesheet">
 </head>
 
-<body>
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
+<body class="h-screen flex justify-center items-center bg-gray-100">
+    <div class="space-y-3">
+        <div>
+            <h1 class="text-3xl font-extrabold">
+                Create An Account
+            </h1>
+        </div>
+
+        <form action="sign up">
+            <div class="space-y-6 flex-col flex">
+                <div class="">
+                    <label for="">Email:</label>
+                    <input type="email"
+                        class="text-bold px-2 py-2 rounded-lg border-0 border-blue-300 hover:ring-2 w-full ">
+                </div>
+                <div class="w-full">
+                    <button
+                        class="py-3 bg-green-700 mx-auto  rounded-lg cursor-pointer text-lg text-white font-bold w-full px-7">
+                        Countinue
+                    </button>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
 </body>
 
 </html>
