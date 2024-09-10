@@ -10,7 +10,7 @@
 <body class="h-screen flex justify-center items-center bg-gray-100">
     <div class="space-y-6">
         <div>
-            <h1 class="text-3xl font-extrabold">
+            <h1 class="text-3xl font-extrabold" id="account">
                 Create An Account
             </h1>
         </div>
@@ -30,13 +30,17 @@
 
                 <div class="w-full " id="submit2">
                     <button
-                        class="py-3 bg-green-700 mx-auto  rounded-lg cursor-pointer text-lg text-white font-bold w-full px-7">
+                        class="py-3 bg-green-700 mx-auto  rounded-lg cursor-pointer text-lg text-white font-bold w-full px-7"
+                        id="submitbutton">
                         Submit
                     </button>
                 </div>
                 <div>
-                    <p class="text-center">
-                        Already have an account? <a class="text-green-600 cursor-pointer">Login</a>
+                    <p class="text-center" id="extra">
+                        Already have an account? <a class="text-green-600 cursor-pointer link" id="login">Login</a>
+                    </p>
+                    <p class="text-center hidden" id="extra1">
+                        Don't have an account? <a class=" text-green-600 cursor-pointer link" id="signup">Signup</a>
                     </p>
                 </div>
             </div>
