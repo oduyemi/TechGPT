@@ -1,10 +1,11 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">
+    <title>Signup & Login</title>
 </head>
 
 <body class="h-screen flex justify-center items-center bg-gray-100">
@@ -15,23 +16,23 @@
             </h1>
         </div>
 
-        <form action="sign up">
+        <form id="signupform">
             <div class="space-y-6 flex-col flex">
-                <div class="" id="email">
-                    <label for="" class="font-bold">Email</label>
-                    <input type="email"
-                        class="px-2 py-2 rounded-lg border-0  w-full focus-visible:border-green-600 focus:ring-2 focus:ring-green-500">
+                <div class="">
+                    <label for="email" class="font-bold">Email</label>
+                    <input type="email" id="emailInput"
+                        class="px-2 py-2 rounded-lg border-0 w-full focus-visible:border-green-600 focus:ring-2 focus:ring-green-500">
                 </div>
-                <div class="" id="password">
-                    <label for="" class="font-bold">Password</label>
-                    <input type="password"
-                        class="px-2 py-2 rounded-lg border-0  w-full focus-visible:border-green-600 focus:ring-2 focus:ring-green-500">
+                <div class="">
+                    <label for="password" class="font-bold">Password</label>
+                    <input type="password" id="passwordInput"
+                        class="px-2 py-2 rounded-lg border-0 w-full focus-visible:border-green-600 focus:ring-2 focus:ring-green-500">
                 </div>
 
-                <div class="w-full " id="submit2">
+                <div class="w-full" id="submit2">
                     <button
-                        class="py-3 bg-green-700 mx-auto  rounded-lg cursor-pointer text-lg text-white font-bold w-full px-7"
-                        id="submitbutton">
+                        class="py-3 bg-green-700 mx-auto rounded-lg cursor-pointer text-lg text-white font-bold w-full px-7"
+                        id="submitbutton" type="submit">
                         Submit
                     </button>
                 </div>
@@ -40,17 +41,19 @@
                         Already have an account? <a class="text-green-600 cursor-pointer link" id="login">Login</a>
                     </p>
                     <p class="text-center hidden" id="extra1">
-                        Don't have an account? <a class=" text-green-600 cursor-pointer link" id="signup">Signup</a>
+                        Don't have an account? <a class="text-green-600 cursor-pointer link" id="signup">Signup</a>
                     </p>
                 </div>
             </div>
-
-
         </form>
     </div>
+    <div id="success" class="hidden">
+        <p class="text-3xl text-blue-600 justify-center items-center font-bold">
+            Welcome, You have successfully logged in!
+        </p>
+    </div>
 
+    <script src="main.js"></script>
 </body>
-<script src="main.js">
-</script>
 
 </html>
