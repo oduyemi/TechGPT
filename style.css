@@ -5,8 +5,8 @@
 }
 
 .box-header {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    bottom: 1rem;
 }
 
 .btn {
@@ -29,6 +29,11 @@
 #upgradeBTN:hover {
     background-color: rgba(0, 119, 255, 0.5);
     color: white;
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-color: white;
     border: none;
 }
 
@@ -84,7 +89,7 @@
 }
 
 .sidebar {
-    width: 22%;
+    width: 100%;
     padding: 0 1%;
     background-color: #171717;
 }
@@ -105,7 +110,7 @@
 
 .sidebar-body {
     height: 82.17vh;
-    overflow: scroll;
+    overflow: auto;
     width: 100%;
 }
 

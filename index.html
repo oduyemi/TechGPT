@@ -9,13 +9,80 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body class="bg-dark text-white">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
+    <!-- navbar toggler -->
+    <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </nav>
+    <div class="box-header mx-5">
+        <div class="row">
+            <div class="col-6 Title dropdown text-end text-lg-start">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="GPT"><span class="lead fw-bold">ChatGPT</span></button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="bi bi-stars"></i>
+                        <div class="item-desc">
+                            <p>ChatGPT Plus</p>
+                            <small>Our smartest model and more</small>
+                        </div>
+                        <div class="btn btn-primary rounded-pill" id="upgradeBTN">Upgrade</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="bi bi-flower3"></i>
+                            <div class="item-desc">
+                                <p>ChatGPT</p>
+                                <small>Great for everyday task</small>
+                            </div>
+                            <i class="bi bi-check-circle-fill"></i>
+                        </a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="bi bi-chat"></i>
+                        <p>Temporary chat</p>
+                        <div class="toggle-box form-check form-switch justify-content-center ">
+                            <!-- <label class="form-check-label check1" for="flexSwitchCheckDefault">Monthly</label> -->
+                            <input class="form-check-input ms-2" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 profile dropdown text-end">
+                <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./resources/images/UserDP.png" alt="dp" class="userDP"></a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li class="dropdown-item">
+                        <i></i>
+                        <p>My GPTs</p>
+                    </li>
+                    <li class="dropdown-item">
+                        <i></i>
+                        <p>Customize ChatGPT</p>
+                    </li>
+                    <li class="dropdown-item">
+                        <i></i>
+                        <p>Settings</p>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li class="dropdown-item">
+                        <i></i>
+                        <p>Upgrade Plan</p>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li class="dropdown-item">
+                        <i></i>
+                        <p>Log out</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            
+    </div>
     <!-- entire work UI -->
     <div class="display-container d-flex mx-5 my-3">
         <!-- left dialogue area -->
@@ -25,12 +92,12 @@
                 <div class="sidebar">
                     <div class="offcanvas-header">
                     <div class="sidebar-header">
-                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">ChatGPT</h5>
                         <div class="img-icon">
-                            <img src="" alt="">
+                            <img src="" alt="images">
                         </div>
                         <div class="img-icon">
-                            <img src="" alt="">
+                            <img src="" alt="images">
                         </div>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
@@ -40,14 +107,14 @@
                     <div class="sidebar-body">
                         <div class="chatGpt box">
                             <div class="img-icon">
-                                <img src="" alt="">
+                                <img src="" alt="images">
                             </div>
                             <h3>ChatGpt</h3>
                         </div>
             
                         <div class="explore box">
                             <div class="img-icon">
-                                <img src="" alt="">
+                                <img src="" alt="images">
                             </div>
                             <h3>Explore GPTs</h3>
                         </div>
@@ -80,7 +147,7 @@
 
                     <div class="sidebar-footer">
                         <div class="img-icon">
-                            <img src="" alt="">
+                            <img src="" alt="images">
                         </div>
 
                         <div class="footer-content">
@@ -94,7 +161,7 @@
         </div>
         <!-- chat area -->
         <div class="chatBox">
-            <div class="box-header">
+            <!-- <div class="box-header">
                 <div class="Title dropdown">
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="GPT"><span class="lead fw-bold">ChatGPT</span></button>
                     <ul class="dropdown-menu dropdown-menu-dark">
@@ -124,7 +191,6 @@
                                 <i class="bi bi-chat"></i>
                             <p>Temporary chat</p>
                             <div class="toggle-box form-check form-switch justify-content-center ">
-                                <!-- <label class="form-check-label check1" for="flexSwitchCheckDefault">Monthly</label> -->
                                 <input class="form-check-input ms-2" type="checkbox" role="switch" id="flexSwitchCheckDefault">
                             </div>
                             </a>
@@ -158,7 +224,8 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
+            
             <!-- question and answer section  -->
             <div class="chat-area my-5 mx-5 px-5">
                 <div class="inputs d-flex my-2 rounded-3">
