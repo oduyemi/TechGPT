@@ -9,6 +9,67 @@
     justify-content: space-between;
 }
 
+.btn {
+    color: white;
+}
+
+#GPT {
+    color: gray;
+}
+
+#GPT:hover {
+    color: white;
+}
+
+.btn:hover {
+    background-color: gray;
+    color: white;
+}
+
+#upgradeBTN:hover {
+    background-color: rgba(0, 119, 255, 0.5);
+    color: white;
+    border: none;
+}
+
+.dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 0.2rem;
+    padding: 1rem;
+}
+
+.userDP {
+    width: 3rem;
+    padding: 0;
+    margin: 0;
+}
+
 .outputs {
     direction: rtl;
+}
+
+.chat-area .inputs, .outputs {
+    width: auto;
+    height: auto;
+    align-items: center;
+}
+
+.welcomeIMG {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5rem;
+}
+
+.type-space {
+    position: fixed bottom;
+    display: flex;
+}
+
+#userQuestion{
+    width: 100%;
+    height: auto;
 }
