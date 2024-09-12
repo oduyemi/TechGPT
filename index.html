@@ -63,7 +63,7 @@
                 <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./resources/images/UserDP.png" alt="dp" class="userDP"></a>
                 <ul class="dropdown-menu dropdown-menu-dark">
                     <li class="dropdown-item">
-                        <i></i>
+                        <i class="bi bi-person-lines-fill"></i>
                         <p>My GPTs</p>
                     </li>
                     <li class="dropdown-item">
@@ -240,7 +240,7 @@
                     </div>
                     <p class="question ms-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit reprehenderit iste saepe, accusantium incidunt labore autem facilis delectus eum aspernatur!</p>
                 </div>
-                <div class="outputs text-end d-flex bg-secondary my-2 rounded-3">
+                <div class="outputs text-start d-flex bg-secondary my-2 rounded-3">
                     <div class="gptIMG">
                         <img src="./resources/images/GPTLogo.png" alt="GPT_icon" class="p-2 userDP">
                     </div>
@@ -249,19 +249,19 @@
             </div>
             <!-- home screen -->
             <img src="./resources/images/GPTLogo.png" alt="GPT_icon" class="welcomeIMG">
-            <div class="sugested_Q row justify-content-center align-items-center d-flex gap-3">
-                <p class="col-md-5 col-lg-2 bg-secondary rounded-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio inventore itaque id quasi placeat explicabo non natus? Deleniti, enim tempora!</p>
-                <p class="col-md-5 col-lg-2 bg-secondary rounded-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae vero suscipit vitae placeat quia velit quam quaerat. Illo, tempore atque.</p>
-                <p class="col-md-5 col-lg-2 bg-secondary rounded-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam temporibus placeat fugiat odio ullam. Corporis facilis ut at doloremque aliquid.</p>
-                <p class="col-md-5 col-lg-2 bg-secondary rounded-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis perspiciatis nihil maiores sequi atque at obcaecati id iure magnam neque?</p>
+            <div class="sugested_Q row justify-content-center align-items-center d-flex gap-3 mt-5 pt-5">
+                <p class="col-md-5 col-lg-2 rounded-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio inventore itaque id quasi placeat explicabo non natus? Deleniti, enim tempora!</p>
+                <p class="col-md-5 col-lg-2 rounded-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae vero suscipit vitae placeat quia velit quam quaerat. Illo, tempore atque.</p>
+                <p class="col-md-5 col-lg-2 rounded-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam temporibus placeat fugiat odio ullam. Corporis facilis ut at doloremque aliquid.</p>
+                <p class="col-md-5 col-lg-2 rounded-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis perspiciatis nihil maiores sequi atque at obcaecati id iure magnam neque?</p>
             </div>
             <!-- dialogue box -->
             <div class="type-space d-flex">
-                <input type="image">
                 <input type="file">
                 <textarea name="questions" id="userQuestion" placeholder="Message ChatGPT"></textarea>
-                <button id="recordButton"><img src="" alt="recorder"></button>
-                <audio id="recordedAudio"></audio>
+                <div class="btn btn-sm rounded-circle justify-content-center" id="sendBTN">
+                    <i class="bi bi-send-fill"></i>
+                </div>
             </div>
         </div>
     </div>

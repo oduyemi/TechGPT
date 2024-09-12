@@ -73,14 +73,29 @@
     width: 5rem;
 }
 
-.type-space {
-    position: fixed bottom;
-    display: flex;
+.sugested_Q p {
+    border: 1px solid gray;
+}
+
+.sugested_Q p:hover {
+    cursor: pointer;
 }
 
 #userQuestion{
     width: 100%;
-    height: auto;
+    height: 50px;
+    resize: vertical;
+    padding: 0.5rem 4rem 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+#sendBTN {
+    width: 2rem;
+    height: 2.2rem;
+    position: relative;
+    right: 3.5rem;
+    top: 0.4rem;
+    background-color: rgb(187, 187, 187);
 }
 
 .container {
