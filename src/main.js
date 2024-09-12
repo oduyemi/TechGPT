@@ -50,7 +50,9 @@ signupForm.addEventListener('submit', (e) => {
         users.push({ email, password });
         localStorage.setItem('users', JSON.stringify(users));
 
-        alert("Sign up successful! You can now log in.");
+        alert("Sign up successful!");
+         sign.classList.add("hidden")
+        successMessage.classList.remove('hidden');
         signupForm.reset();
     } else {
         
@@ -61,6 +63,7 @@ signupForm.addEventListener('submit', (e) => {
             successMessage.classList.remove('hidden');
         } else {
             alert("Invalid email or password! Please try again.");
+              signupForm.reset();
         }
     }
 });
