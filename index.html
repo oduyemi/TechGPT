@@ -4,8 +4,266 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechGPT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
-<body>
-    
-</body>
-</html>
+<body class="bg-dark text-white">
+    <!-- navbar toggler -->
+    <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="box-header mx-5">
+        <div class="row">
+            <div class="col-6 Title dropdown text-end text-lg-start">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="GPT"><span class="lead fw-bold">ChatGPT</span></button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li>
+                        <a class="dropdown-item" href="#">
+                        <div class="item-desc d-flex align-items-center">
+                            <i class="bi bi-stars me-2"></i>
+                            <div class="txt">
+                                <p>ChatGPT Plus</p>
+                                <small>Our smartest model and more</small>
+                            </div>
+                        </div>
+                        <div class="btn bt-sm btn-primary rounded-5" id="upgradeBTN">Upgrade</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <div class="item-desc d-flex align-items-center">
+                                <i class="bi bi-flower3 me-2"></i>
+                                <div class="txt">
+                                    <p>ChatGPT</p>
+                                    <small>Great for everyday task</small>
+                                </div>
+                            </div>
+                            <i class="bi bi-check-circle-fill"></i>
+                        </a>
+                    </li>
+                    <li><hr class="dropdown-divider mx-2"></li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <div class="item-desc d-flex align-items-center">
+                                <i class="bi bi-chat me-2"></i>
+                                <p>Temporary chat</p>
+                            </div>
+                        <div class="toggle-box form-check form-switch justify-content-center ">
+                            <!-- <label class="form-check-label check1" for="flexSwitchCheckDefault">Monthly</label> -->
+                            <input class="form-check-input ms-2" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 profile dropdown text-end">
+                <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./resources/images/UserDP.png" alt="dp" class="userDP"></a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li class="dropdown-item">
+                        <i></i>
+                        <p>My GPTs</p>
+                    </li>
+                    <li class="dropdown-item">
+                        <i></i>
+                        <p>Customize ChatGPT</p>
+                    </li>
+                    <li class="dropdown-item">
+                        <i></i>
+                        <p>Settings</p>
+                    </li>
+                    <li><hr class="dropdown-divider mx-2"></li>
+                    <li class="dropdown-item">
+                        <i></i>
+                        <p>Upgrade Plan</p>
+                    </li>
+                    <li><hr class="dropdown-divider mx-2"></li>
+                    <li class="dropdown-item">
+                        <i></i>
+                        <p>Log out</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            
+    </div>
+    <!-- entire work UI -->
+    <div class="display-container d-flex mx-5 my-3">
+        <!-- left dialogue area -->
+        <div class="nav-section">
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="container">
+                <div class="sidebar">
+                    <div class="offcanvas-header">
+                    <div class="sidebar-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">ChatGPT</h5>
+                        <div class="img-icon">
+                            <img src="" alt="images">
+                        </div>
+                        <div class="img-icon">
+                            <img src="" alt="images">
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    </div>
+
+                    <div class="offcanvas-body">
+                    <div class="sidebar-body">
+                        <div class="chatGpt box">
+                            <div class="img-icon">
+                                <img src="" alt="images">
+                            </div>
+                            <h3>ChatGpt</h3>
+                        </div>
+            
+                        <div class="explore box">
+                            <div class="img-icon">
+                                <img src="" alt="images">
+                            </div>
+                            <h3>Explore GPTs</h3>
+                        </div>
+            
+                        <div class="today days">
+                            <h5>Today</h5>
+                            <!-- <p class="chats">hgdhdhjjhdhjdhjhdjhjdhjdhjdhhjdhdhhdhdhdh</p>
+                            <p class="chats">hgdhdhjjhdhjdhjhdjhjdhjdhjdhdddhhdhhhhdhd</p>
+                            <p class="chats">hgdhdhjjhdhjdhjhdjhjdhjdhjdhgdggdggdggdgd</p>
+                            <p class="chats">hgdhdhjjhdhjdhjhdjhjdhjdhjdhgsggsgggsgsgg</p> -->
+                        </div>
+            
+                        <div class="yesterday days">
+                            <h5>Yesterday</h5>
+                            <!-- <p class="chats">hgdhdhjjhdhjdhjhdjhjdhjdhjdh</p>
+                            <p class="chats">hgdhdhjjhdhjdhjhdjhjdhjdhjdh</p>
+                            <p class="chats">hgdhdhjjhdhjdhjhdjhjdhjdhjdh</p>
+                            <p class="chats">hgdhdhjjhdhjdhjhdjhjdhjdhjdh</p> -->
+                        </div>
+            
+                        <div class="previous7 days">
+                            <h5>Previous 7 Days</h5>
+                            <!-- <p class="chats">hgdhdhjjhdhjdhjhdjhjdhjdhjdh</p>
+                            <p class="chats">hgdhdhjjhdhjdhjhdjhjdhjdhjdh</p>
+                            <p class="chats">hgdhdhjjhdhjdhjhdjhjdhjdhjdh</p>
+                            <p class="chats">hgdhdhjjhdhjdhjhdjhjdhjdhjdh</p> -->
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="sidebar-footer">
+                        <div class="img-icon">
+                            <img src="" alt="images">
+                        </div>
+
+                        <div class="footer-content">
+                            <h3>Upgrade Plan</h3>
+                            <p>Get GPT-4, DALL-E and more</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- chat area -->
+        <div class="chatBox">
+            <!-- <div class="box-header">
+                <div class="Title dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="GPT"><span class="lead fw-bold">ChatGPT</span></button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-stars"></i>
+                            <div class="item-desc">
+                                <p>ChatGPT Plus</p>
+                                <small>Our smartest model and more</small>
+                            </div>
+                            <div class="btn btn-primary rounded-pill" id="upgradeBTN">Upgrade</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-flower3"></i>
+                                <div class="item-desc">
+                                    <p>ChatGPT</p>
+                                    <small>Great for everyday task</small>
+                                </div>
+                                <i class="bi bi-check-circle-fill"></i>
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-chat"></i>
+                            <p>Temporary chat</p>
+                            <div class="toggle-box form-check form-switch justify-content-center ">
+                                <input class="form-check-input ms-2" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                            </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="profile dropdown">
+                    <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./resources/images/UserDP.png" alt="dp" class="userDP"></a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li class="dropdown-item">
+                            <i></i>
+                            <p>My GPTs</p>
+                        </li>
+                        <li class="dropdown-item">
+                            <i></i>
+                            <p>Customize ChatGPT</p>
+                        </li>
+                        <li class="dropdown-item">
+                            <i></i>
+                            <p>Settings</p>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li class="dropdown-item">
+                            <i></i>
+                            <p>Upgrade Plan</p>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li class="dropdown-item">
+                            <i></i>
+                            <p>Log out</p>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+            
+            <!-- question and answer section  -->
+            <div class="chat-area my-5 mx-5 px-5">
+                <div class="inputs d-flex my-2 rounded-3">
+                    <div class="userIMG">
+                        <img src="./resources/images/UserDP.png" alt="Userdp" class="p-2 userDP">
+                    </div>
+                    <p class="question ms-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit reprehenderit iste saepe, accusantium incidunt labore autem facilis delectus eum aspernatur!</p>
+                </div>
+                <div class="outputs text-end d-flex bg-secondary my-2 rounded-3">
+                    <div class="gptIMG">
+                        <img src="./resources/images/GPTLogo.png" alt="GPT_icon" class="p-2 userDP">
+                    </div>
+                    <p class="question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit reprehenderit iste saepe, accusantium incidunt labore autem facilis delectus eum aspernatur!</p>
+                </div>
+            </div>
+            <!-- home screen -->
+            <img src="./resources/images/GPTLogo.png" alt="GPT_icon" class="welcomeIMG">
+            <div class="sugested_Q row justify-content-center align-items-center d-flex gap-3">
+                <p class="col-md-5 col-lg-2 bg-secondary rounded-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio inventore itaque id quasi placeat explicabo non natus? Deleniti, enim tempora!</p>
+                <p class="col-md-5 col-lg-2 bg-secondary rounded-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae vero suscipit vitae placeat quia velit quam quaerat. Illo, tempore atque.</p>
+                <p class="col-md-5 col-lg-2 bg-secondary rounded-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam temporibus placeat fugiat odio ullam. Corporis facilis ut at doloremque aliquid.</p>
+                <p class="col-md-5 col-lg-2 bg-secondary rounded-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis perspiciatis nihil maiores sequi atque at obcaecati id iure magnam neque?</p>
+            </div>
+            <!-- dialogue box -->
+            <div class="type-space d-flex">
+                <input type="image">
+                <input type="file">
+                <textarea name="questions" id="userQuestion" placeholder="Message ChatGPT"></textarea>
+                <button id="recordButton"><img src="" alt="recorder"></button>
+                <audio id="recordedAudio"></audio>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
