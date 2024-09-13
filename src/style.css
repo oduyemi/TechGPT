@@ -81,12 +81,19 @@
     cursor: pointer;
 }
 
+.type-space {
+    position: fixed;
+    bottom: 1rem;
+    width: 60%;
+}
+
 #userQuestion{
     width: 100%;
     height: 50px;
     resize: vertical;
     padding: 0.5rem 4rem 0.5rem 0.5rem;
     border-radius: 0.5rem;
+    color: #171717;
 }
 
 #sendBTN {
@@ -99,8 +106,11 @@
 }
 
 .container {
-    width: 100%;
+    width: 20rem;
+    height: 50rem;
     display: flex;
+    position: relative;
+    right: 3.5rem;
     align-items: center;
     justify-content: flex-start;
     background-color: #212121;
