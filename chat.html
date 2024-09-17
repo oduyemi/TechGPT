@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Area</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ensure these styles match the sidebar and chat layout */
+        body {
+            display: flex;
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #171717;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sidebar-body {
+            flex-grow: 1;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+        }
+
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            margin-left: 250px; /* Space for the sidebar */
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        .chat-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .input-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-area textarea {
+            flex: 1;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+        }
+
+        .input-area button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        .input-area button:hover {
+            background-color: #0056b3;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+        }
+
+        .chat-message.user {
+            text-align: right;
+        }
+
+        .chat-message.bot {
+            text-align: left;
+        }
+
+        .chat-message p {
+            background-color: #f1f1f1;
+            border-radius: 4px;
+            padding: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="img-icon">Logo</div>
+            <div class="user-profile">User</div>
+        </div>
+        <div class="sidebar-body">
+            <div class="box">Chat 1</div>
+            <div class="box">Chat 2</div>
+            <!-- Add more chat boxes as needed -->
+        </div>
+        <div class="sidebar-footer">
+            Footer Content
+        </div>
+    </div>
+    <div class="chat-container">
+        <div class="chat-area" id="chatArea">
+            <!-- Chat messages will be displayed here -->
+            <div class="chat-message user">
+                <p>Hello! How can I assist you today?</p>
+            </div>
+            <div class="chat-message bot">
+                <p>I'd like to know more about your services.</p>
+            </div>
+            <!-- Add more chat messages as needed -->
+        </div>
+        <div class="input-area">
+            <textarea id="userInput" rows="2" placeholder="Type your message..."></textarea>
+            <button id="sendMessage">Send</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('sendMessage').addEventListener('click', function() {
+            const userInput = document.getElementById('userInput').value;
+            if (userInput.trim() === '') return;
+
+            const chatArea = document.getElementById('chatArea');
+
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('chat-message', 'user');
+            userMessage.innerHTML = `<p>${userInput}</p>`;
+            chatArea.appendChild(userMessage);
+
+            // Clear the input
+            document.getElementById('userInput').value = '';
+
+            // Simulate bot response
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.classList.add('chat-message', 'bot');
+                botMessage.innerHTML = `<p>This is a bot response to: "${userInput}"</p>`;
+                chatArea.appendChild(botMessage);
+                chatArea.scrollTop = chatArea.scrollHeight; // Auto-scroll to bottom
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
