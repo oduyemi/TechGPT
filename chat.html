@@ -6,7 +6,6 @@
     <title>Chat Area</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Ensure these styles match the sidebar and chat layout */
         body {
             display: flex;
             margin: 0;
@@ -117,7 +116,6 @@
         <div class="sidebar-body">
             <div class="box">Chat 1</div>
             <div class="box">Chat 2</div>
-            <!-- Add more chat boxes as needed -->
         </div>
         <div class="sidebar-footer">
             Footer Content
@@ -125,14 +123,13 @@
     </div>
     <div class="chat-container">
         <div class="chat-area" id="chatArea">
-            <!-- Chat messages will be displayed here -->
+            <!-- Chat messages will be shown here -->
             <div class="chat-message user">
                 <p>Hello! How can I assist you today?</p>
             </div>
             <div class="chat-message bot">
                 <p>I'd like to know more about your services.</p>
             </div>
-            <!-- Add more chat messages as needed -->
         </div>
         <div class="input-area">
             <textarea id="userInput" rows="2" placeholder="Type your message..."></textarea>
@@ -147,22 +144,22 @@
 
             const chatArea = document.getElementById('chatArea');
 
-            // Add user message
+            // user message
             const userMessage = document.createElement('div');
             userMessage.classList.add('chat-message', 'user');
             userMessage.innerHTML = `<p>${userInput}</p>`;
             chatArea.appendChild(userMessage);
 
-            // Clear the input
+            // Clear input
             document.getElementById('userInput').value = '';
 
-            // Simulate bot response
+            // Bot response
             setTimeout(() => {
                 const botMessage = document.createElement('div');
                 botMessage.classList.add('chat-message', 'bot');
                 botMessage.innerHTML = `<p>This is a bot response to: "${userInput}"</p>`;
                 chatArea.appendChild(botMessage);
-                chatArea.scrollTop = chatArea.scrollHeight; // Auto-scroll to bottom
+                chatArea.scrollTop = chatArea.scrollHeight; 
             }, 1000);
         });
     </script>
