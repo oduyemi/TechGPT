@@ -10,18 +10,17 @@ const login = document.getElementById('login');
 const signup = document.getElementById('signup');
 const sign = document.getElementById("sign");
 
-
 login.addEventListener("click", () => {
     account.textContent = "Login to your account";
-    extra.classList.add("hidden");   
-    extra1.classList.remove("hidden"); 
-    submitButton.textContent = "Login"; 
+    extra.classList.add("hidden");  
+    extra1.classList.remove("hidden");
+    submitButton.textContent = "Login";  
 });
 
 signup.addEventListener("click", () => {
     account.textContent = "Create an account";
     extra.classList.remove("hidden");   
-    extra1.classList.add("hidden");  
+    extra1.classList.add("hidden");
     submitButton.textContent = "Sign Up";  
 });
 
@@ -34,6 +33,7 @@ signupForm.addEventListener('submit', (e) => {
     let users = JSON.parse(localStorage.getItem('users')) || [];
 
     if (submitButton.textContent === "Sign Up") {
+        // Sign up logic
         const userExists = users.find(user => user.email === email);
 
         if (userExists) {
@@ -45,13 +45,15 @@ signupForm.addEventListener('submit', (e) => {
         localStorage.setItem('users', JSON.stringify(users));
 
         alert("Sign up successful! You can now log in.");
-        signupForm.reset();  
+        signupForm.reset(); 
     } else {
         const authenticatedUser = users.find(user => user.email === email && user.password === password);
 
         if (authenticatedUser) {
             sign.classList.add("hidden");
             successMessage.classList.remove('hidden');
+
+            window.location.href = "chat.html";
         } else {
             alert("Invalid email or password! Please try again.");
         }
