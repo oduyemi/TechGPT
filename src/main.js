@@ -10,6 +10,7 @@ const login = document.getElementById('login');
 const signup = document.getElementById('signup');
 const sign = document.getElementById("sign");
 
+
 login.addEventListener("click", () => {
     account.textContent = "Login to your account";
     extra.classList.add("hidden");   
