@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Area</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <style>
         body {
             display: flex;
@@ -15,7 +15,7 @@
         }
 
         .sidebar {
-            width: 250px;
+            width: 300px;
             background-color: #171717;
             color: white;
             display: flex;
@@ -44,7 +44,6 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            margin-left: 250px; /* Space for the sidebar */
             padding: 20px;
             background-color: #ffffff;
         }
@@ -105,13 +104,19 @@
             padding: 10px;
             display: inline-block;
         }
+
     </style>
 </head>
 <body>
     <div class="sidebar">
         <div class="sidebar-header">
-            <div class="img-icon">Logo</div>
-            <div class="user-profile">User</div>
+            <div class="img-icon">
+                &emsp;<img src="./src/images/GPTLogo.png" alt="Site logo" width="98%" />
+                <span> TechGPT</span>
+            </div>
+            <div class="user-profile">
+                <!-- <p>TechGPT</p> -->
+            </div>
         </div>
         <div class="sidebar-body">
             <div class="box">Chat 1</div>
@@ -123,12 +128,8 @@
     </div>
     <div class="chat-container">
         <div class="chat-area" id="chatArea">
-            <!-- Chat messages will be shown here -->
-            <div class="chat-message user">
-                <p>Hello! How can I assist you today?</p>
-            </div>
             <div class="chat-message bot">
-                <p>I'd like to know more about your services.</p>
+                <p>Hello! How can I assist you today?</p>
             </div>
         </div>
         <div class="input-area">
@@ -138,29 +139,56 @@
     </div>
 
     <script>
-        document.getElementById('sendMessage').addEventListener('click', function() {
+        const API_KEY = "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";
+        
+        document.getElementById('sendMessage').addEventListener('click', async function() {
             const userInput = document.getElementById('userInput').value;
             if (userInput.trim() === '') return;
 
             const chatArea = document.getElementById('chatArea');
 
-            // user message
+            // Add user message to the chat
             const userMessage = document.createElement('div');
             userMessage.classList.add('chat-message', 'user');
             userMessage.innerHTML = `<p>${userInput}</p>`;
             chatArea.appendChild(userMessage);
+            chatArea.scrollTop = chatArea.scrollHeight;
 
-            // Clear input
+            // Clear the input
             document.getElementById('userInput').value = '';
 
-            // Bot response
-            setTimeout(() => {
+            // Fetch response from OpenAI API
+            try {
+                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${API_KEY}`
+                    },
+                    body: JSON.stringify({
+                        model: "gpt-3.5-turbo",
+                        messages: [{ role: "user", content: userInput }]
+                    })
+                });
+
+                const data = await response.json();
+                const botResponse = data.choices[0].message.content;
+
+                // Add bot response to the chat
                 const botMessage = document.createElement('div');
                 botMessage.classList.add('chat-message', 'bot');
-                botMessage.innerHTML = `<p>This is a bot response to: "${userInput}"</p>`;
+                botMessage.innerHTML = `<p>${botResponse}</p>`;
                 chatArea.appendChild(botMessage);
-                chatArea.scrollTop = chatArea.scrollHeight; 
-            }, 1000);
+                chatArea.scrollTop = chatArea.scrollHeight;
+
+            } catch (error) {
+                console.error('Error:', error);
+                const errorMessage = document.createElement('div');
+                errorMessage.classList.add('chat-message', 'bot');
+                errorMessage.innerHTML = `<p>Sorry, something went wrong. Please try again.</p>`;
+                chatArea.appendChild(errorMessage);
+                chatArea.scrollTop = chatArea.scrollHeight;
+            }
         });
     </script>
 </body>
