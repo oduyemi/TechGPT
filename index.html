@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechGPT | Login</title>
+    <title>TechGPT</title>
     <link rel="stylesheet" href="./style.css">
     <style>
         body {
@@ -56,7 +56,7 @@
             margin-top: 1rem;
         }
 
-        #account{
+        #account {
             margin-top: 20px;
         }
     </style>
@@ -65,16 +65,16 @@
     <div class="container">
         <h2 id="account">Login to your account</h2>
         <form id="signupform">
+            <p id="success" class="hidden">Welcome! You are successfully logged in.</p>
             <input type="email" id="emailInput" placeholder="Email" required>
             <input type="password" id="passwordInput" placeholder="Password" required>
             <div id="extra" class="hidden">
-                <input type="password" id="confirmPasswordInput" placeholder="Confirm Password" required>
+                <input type="password" id="confirmPasswordInput" placeholder="Confirm Password">
             </div>
             <button type="submit" id="submitbutton">Login</button>
             <p class="form-toggle">
                 <span id="login">Login</span> | <span id="signup">Sign Up</span>
             </p>
-            <p id="success" class="hidden">Welcome! You are successfully logged in.</p>
         </form>
     </div>
 
